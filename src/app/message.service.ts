@@ -11,6 +11,7 @@ export class MessageService {
 
   constructor() { }
   private subject = new Subject<any>();
+  private countSubject = new Subject<any>();
 
   sendMessage(message: string) {
       this.subject.next({ text: message });
@@ -21,8 +22,16 @@ export class MessageService {
   }
 
   getMessage(): Observable<any> {
-    console.log("GET Message")  ;
     return this.subject.asObservable();
+
+  }
+
+  sendMessageCount(count: number) {
+    this.countSubject.next({ count: count });
+}
+
+  getMessageCount(): Observable<any> {
+    return this.countSubject.asObservable();
 
   }
 }

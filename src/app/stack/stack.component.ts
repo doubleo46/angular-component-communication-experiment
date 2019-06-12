@@ -13,15 +13,20 @@ export class StackComponent implements OnInit {
   ngOnInit() {
   }
 
-  sendMessage(): void {
+  buttonSendMessage(message): void {
     // send message to subscribers via observable subject
-    this.messageService.sendMessage('Message from Stack Component to Module Component!');
-    console.log("Send message");
+    if (message){
+      this.messageService.sendMessage(message);
+    }
+    else{
+      this.messageService.sendMessage("Nothing to send");
+    }
 }
 
-clearMessages(): void {
+buttonClearMessages(): void {
     // clear messages
     this.messageService.clearMessages();
+
 }
 
 }

@@ -1,13 +1,15 @@
 <div class="col-md-12 bg minHeightAndPadding">
   <h2>Communication Source(Stack)</h2>
   <div class="row">
+    <input #message type="text" value=""/>
+  </div>
+    <div class="row">
     <div class="col-md-4 mr-2">
-
-      <button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+      <button (click)="buttonSendMessage(message.value)" class="btn btn-primary">Send Message</button>
     </div>
 
     <div class="col-md-4 ml-2">
-      <button (click)="clearMessages()" class="btn btn-secondary">Clear Messages</button>
+      <button (click)="buttonClearMessages()" class="btn btn-secondary">Clear Messages</button>
 
     </div>
 
