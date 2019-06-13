@@ -1,5 +1,8 @@
 import { ProductsService } from './../products.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Product } from './producs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mapping-data',
@@ -8,12 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MappingDataComponent implements OnInit {
 
-  public products = [];
   constructor(private _productService:ProductsService) { }
 
   ngOnInit() {
-    this._productService.getProducts().subscribe(data=>this.products=data);
-    console.log(this.products);
-  }
 
+  }
+  products$:Observable<Product[]> = this._productService.products$
 }
