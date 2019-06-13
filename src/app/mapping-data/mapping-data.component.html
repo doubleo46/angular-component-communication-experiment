@@ -1,9 +1,16 @@
 <h2>Products</h2>
 <ul *ngIf="products$ | async as products">
-    <li *ngFor='let product of products'>{{product.id}} - {{product.name}}  - {{product.category}}</li>
+    <li *ngFor='let product of products'>{{product.id}} - {{product.name}}  - {{product.categoryId}}</li>
 </ul>
 
 <h2>Product Categories</h2>
 <ul *ngIf="categories$ | async as categories">
     <li *ngFor='let category of categories'>{{category.id}} - {{category.name}} </li>
 </ul>
+
+
+<h2>Product Categories</h2>
+<ul *ngIf="productWithCategories$ | async as productWithCategories">
+    <li *ngFor='let product of productWithCategories'>{{product.id}} - {{product.name}}  - {{product.categoryId}} - {{product.category}}</li>
+</ul>
+

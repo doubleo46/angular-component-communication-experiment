@@ -20,4 +20,5 @@ export class MappingDataComponent implements OnInit {
   }
   products$:Observable<Product[]> = this._productService.products$;
   categories$:Observable<Category[]> = this._categoryService.categories$;
+  productWithCategories$:Observable<Product[]> =this._productService.productWithCategories$;
 }
