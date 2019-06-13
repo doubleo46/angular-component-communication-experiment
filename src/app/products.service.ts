@@ -14,5 +14,5 @@ export class ProductsService {
   // All products
   // Instead of defining the http.get in a method in the service,
   // set the observable directly
-  products$ = this._http.get<Product[]>(this._product_url)
+  products$ = this._http.get<Product[]>(this._product_url);
 }

@@ -1,6 +1,9 @@
-<p>
-  mapping-data works!
-</p>
+<h2>Products</h2>
 <ul *ngIf="products$ | async as products">
     <li *ngFor='let product of products'>{{product.id}} - {{product.name}}  - {{product.category}}</li>
+</ul>
+
+<h2>Product Categories</h2>
+<ul *ngIf="categories$ | async as categories">
+    <li *ngFor='let category of categories'>{{category.id}} - {{category.name}} </li>
 </ul>

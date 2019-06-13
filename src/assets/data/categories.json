@@ -1,2 +1,5 @@
-{"products":[{"id":1,"name":"Drinks"},{"id":2,"name":"Watch"}]}
+[
+    {"id":1,"name":"Drinks"},
+    {"id":2,"name":"Watch"}
+]
 

@@ -1,4 +1,4 @@
-import { category } from './mapping-data/category';
+import { Category } from './mapping-data/category';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,7 +11,9 @@ export class ProductCategoriesService {
 
   constructor(private _http:HttpClient) { }
 
-  getCategories():Observable<category[]>{
-    return this._http.get<category[]>(this._category_url);
-  }
+
+    // All Categories
+  // Instead of defining the http.get in a method in the service,
+  // set the observable directly
+  categories$:Observable<Category[]> =  this._http.get<Category[]>(this._category_url);
 }
